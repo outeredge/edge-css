@@ -1,0 +1,59 @@
+//   ClassName  FontSize    LineHeight  FontWeight
+$h1: h1         2em         1.5em       bold        !default
+$h2: h2         1.8em       1.5em       bold        !default
+$h3: h3         1.6em       1.5em       bold        !default
+$h4: h4         1.4em       1.5em       bold        !default
+$h5: h5         1.2em       1.5em       bold        !default
+$headings: $h1 $h2 $h3 $h4 $h5 !default
+
+$paragraph-font-size: 1em !default
+$paragraph-line-height: 1.5em !default
+$paragraph-margin: 1em !default
+
+$link-color: #990000 !default
+$link-underline: false !default
+$link-hover-color: #009900 !default
+
+@mixin font-style($class-name, $font-size, $line-height: '', $font-weight: '', $font-family: '')
+    .#{$class-name}
+        font-size: $font-size
+        @if $line-height != ''
+            line-height: $line-height
+        @if $font-weight != ''
+            font-weight: $font-weight
+        @if $font-family != ''
+            font-family: $font-family
+
+@each $heading in $headings
+    @include font-style(nth($heading,1), nth($heading,2), nth($heading,3), nth($heading,4))
+
+@each $device in $device-list
+    @media #{nth($device,2)}
+        @each $heading in $headings
+            @include font-style(nth($device,1) + "-" + nth($heading,1), nth($heading,2), nth($heading,3), nth($heading,4))
+
+
+@mixin paragraph($device: '')
+    .#{$device}paragraph
+        font-size: $paragraph-font-size
+        line-height: $paragraph-line-height
+        margin-bottom: $paragraph-margin
+
+@include paragraph
+@each $device in $device-list
+    @media #{nth($device,2)}
+        @include paragraph(nth($device,1) + "-")
+
+p
+    font-size: $paragraph-font-size
+    line-height: $paragraph-line-height
+    margin-bottom: $paragraph-margin
+
+a,
+.link
+    color: $link-color
+    cursor: pointer
+    @if $link-underline == false
+        text-decoration: none
+    &:hover
+        color: $link-hover-color

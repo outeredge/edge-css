@@ -1,0 +1,14 @@
+@mixin text-align($device: '')
+    .#{$device}text-left
+        text-align: left
+    .#{$device}text-right
+        text-align: right
+    .#{$device}text-center
+        text-align: center
+    .#{$device}text-justify
+        text-align: justify
+
+@include text-align
+@each $device in $device-list
+    @media #{nth($device,2)}
+        @include text-align(nth($device,1) + "-")

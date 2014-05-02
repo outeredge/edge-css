@@ -1,0 +1,12 @@
+@mixin transform($transform)
+    -webkit-transform: #{$transform}
+    -moz-transform: #{$transform}
+    -ms-transform: #{$transform}
+    -o-transform: #{$transform}
+    transform: #{$transform}
+
+
+$rotations: 45 90 135 180 225 270 315 360
+@each $rotation in $rotations
+    .rotate-#{$rotation}
+        @include transform(rotate(#{$rotation}deg))

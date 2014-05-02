@@ -1,0 +1,14 @@
+@mixin display($device: '')
+    .#{$device}hide
+        display: none
+    .#{$device}block
+        display: block
+    .#{$device}inline-block
+        display: inline-block
+    .#{$device}inline
+        display: inline
+
+@include display
+@each $device in $device-list
+    @media #{nth($device,2)}
+        @include display(nth($device,1) + "-")

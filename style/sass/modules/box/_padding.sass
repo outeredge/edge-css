@@ -1,0 +1,65 @@
+$padding-class: padding !default
+$padding-default: 1em !default
+$padding-small: small .5em !default
+$padding-large: large 1.5em !default
+$padding-sizes: $padding-small $padding-large !default
+
+@mixin padding($device: '')
+    .#{$device}#{$padding-class}
+        padding: #{$padding-default}
+    .#{$device}#{$padding-class}-#{$class-left}
+        padding-left: #{$padding-default}
+    .#{$device}#{$padding-class}-#{$class-right}
+        padding-right: #{$padding-default}
+    .#{$device}#{$padding-class}-#{$class-top}
+        padding-top: #{$padding-default}
+    .#{$device}#{$padding-class}-#{$class-bottom}
+        padding-bottom: #{$padding-default}
+    .#{$device}#{$padding-class}-vertical
+        padding-top: #{$padding-default}
+        padding-bottom: #{$padding-default}
+    .#{$device}#{$padding-class}-horizontal
+        padding-left: #{$padding-default}
+        padding-right: #{$padding-default}
+
+@mixin padding-variant($size, $device: '')
+    .#{$device}#{$padding-class}-#{nth($size,1)}
+        padding: #{nth($size,2)}
+    .#{$device}#{$padding-class}-#{$class-left}-#{nth($size,1)}
+        padding-left: #{nth($size,2)}
+    .#{$device}#{$padding-class}-#{$class-right}-#{nth($size,1)}
+        padding-right: #{nth($size,2)}
+    .#{$device}#{$padding-class}-#{$class-top}-#{nth($size,1)}
+        padding-top: #{nth($size,2)}
+    .#{$device}#{$padding-class}-#{$class-bottom}-#{nth($size,1)}
+        padding-bottom: #{nth($size,2)}
+    .#{$device}#{$padding-class}-vertical-#{nth($size,1)}
+        padding-top: #{nth($size,2)}
+        padding-bottom: #{nth($size,2)}
+    .#{$device}#{$padding-class}-horizontal-#{nth($size,1)}
+        padding-left: #{nth($size,2)}
+        padding-right: #{nth($size,2)}
+
+@mixin no-padding($device: '')
+    .#{$device}no-#{$padding-class}
+        padding: 0
+    .#{$device}no-#{$padding-class}-#{$class-left}
+        padding-left: 0
+    .#{$device}no-#{$padding-class}-#{$class-right}
+        padding-right: 0
+    .#{$device}no-#{$padding-class}-#{$class-top}
+        padding-top: 0
+    .#{$device}no-#{$padding-class}-#{$class-bottom}
+        padding-bottom: 0
+
+@include padding
+@each $size in $padding-sizes
+    @include padding-variant($size)
+@include no-padding
+
+@each $device in $device-list
+    @media #{nth($device,2)}
+        @include padding(nth($device,1) + "-")
+        @each $size in $padding-sizes
+            @include padding-variant($size, nth($device,1) + "-")
+        @include no-padding(nth($device,1) + "-")

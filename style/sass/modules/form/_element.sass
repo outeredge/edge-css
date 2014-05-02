@@ -1,0 +1,17 @@
+$input-background: #EEEEEE !default
+$input-colour: #333333 !default
+$input-border: 1px solid #CCCCCC !default
+$input-padding: .5em !default
+$input-width: false !default
+
+.input,
+.textarea,
+.select
+    background: $input-background
+    color: $input-colour
+    border: $input-border
+    padding: $input-padding
+    margin: 0
+    @include box-sizing(border-box)
+    @if $input-width
+        width: $input-width

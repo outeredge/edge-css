@@ -1,0 +1,18 @@
+@mixin overflow($device: '')
+    .#{$device}scroll
+        overflow: visible
+    .#{$device}no-scroll
+        overflow: hidden
+    .#{$device}scroll-x
+        overflow-x: visible
+    .#{$device}no-scroll-x
+        overflow-x: hidden
+    .#{$device}scroll-y
+        overflow-y: visible
+    .#{$device}no-scroll-y
+        overflow-y: hidden
+
+@include overflow
+@each $device in $device-list
+    @media #{nth($device,2)}
+        @include overflow(nth($device,1) + "-")

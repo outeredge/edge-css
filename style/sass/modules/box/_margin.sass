@@ -1,0 +1,65 @@
+$margin-class: margin !default
+$margin-default: 1em !default
+$margin-small: small .5em !default
+$margin-large: large 1.5em !default
+$margin-sizes: $margin-small $margin-large !default
+
+@mixin margin($device: '')
+    .#{$device}#{$margin-class}
+        margin: #{$margin-default}
+    .#{$device}#{$margin-class}-#{$class-left}
+        margin-left: #{$margin-default}
+    .#{$device}#{$margin-class}-#{$class-right}
+        margin-right: #{$margin-default}
+    .#{$device}#{$margin-class}-#{$class-top}
+        margin-top: #{$margin-default}
+    .#{$device}#{$margin-class}-#{$class-bottom}
+        margin-bottom: #{$margin-default}
+    .#{$device}#{$margin-class}-vertical
+        margin-top: #{$margin-default}
+        margin-bottom: #{$margin-default}
+    .#{$device}#{$margin-class}-horizontal
+        margin-left: #{$margin-default}
+        margin-right: #{$margin-default}
+
+@mixin margin-variant($size, $device: '')
+    .#{$device}#{$margin-class}-#{nth($size,1)}
+        margin: #{nth($size,2)}
+    .#{$device}#{$margin-class}-#{$class-left}-#{nth($size,1)}
+        margin-left: #{nth($size,2)}
+    .#{$device}#{$margin-class}-#{$class-right}-#{nth($size,1)}
+        margin-right: #{nth($size,2)}
+    .#{$device}#{$margin-class}-#{$class-top}-#{nth($size,1)}
+        margin-top: #{nth($size,2)}
+    .#{$device}#{$margin-class}-#{$class-bottom}-#{nth($size,1)}
+        margin-bottom: #{nth($size,2)}
+    .#{$device}#{$margin-class}-vertical-#{nth($size,1)}
+        margin-top: #{nth($size,2)}
+        margin-bottom: #{nth($size,2)}
+    .#{$device}#{$margin-class}-horizontal-#{nth($size,1)}
+        margin-left: #{nth($size,2)}
+        margin-right: #{nth($size,2)}
+
+@mixin no-margin($device: '')
+    .#{$device}no-#{$margin-class}
+        margin: 0
+    .#{$device}no-#{$margin-class}-#{$class-left}
+        margin-left: 0
+    .#{$device}no-#{$margin-class}-#{$class-right}
+        margin-right: 0
+    .#{$device}no-#{$margin-class}-#{$class-top}
+        margin-top: 0
+    .#{$device}no-#{$margin-class}-#{$class-bottom}
+        margin-bottom: 0
+
+@include margin
+@each $size in $margin-sizes
+    @include margin-variant($size)
+@include no-margin
+
+@each $device in $device-list
+    @media #{nth($device,2)}
+        @include margin(nth($device,1) + "-")
+        @each $size in $margin-sizes
+            @include margin-variant($size, nth($device,1) + "-")
+        @include no-margin(nth($device,1) + "-")

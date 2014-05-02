@@ -1,0 +1,27 @@
+@mixin position($device: '')
+    .#{$device}relative
+        position: relative
+    .#{$device}absolute
+        position: absolute
+    .#{$device}fixed
+        position: fixed
+    .#{$device}static
+        position: static
+    .#{$device}top-left
+        top: 0
+        left: 0
+    .#{$device}top-right
+        top: 0
+        right: 0
+    .#{$device}bottom-left
+        bottom: 0
+        left: 0
+    .#{$device}bottom-right
+        bottom: 0
+        right: 0
+
+
+@include position
+@each $device in $device-list
+    @media #{nth($device,2)}
+        @include position(nth($device,1) + "-")

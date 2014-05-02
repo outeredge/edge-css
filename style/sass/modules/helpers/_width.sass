@@ -1,0 +1,11 @@
+@mixin width($device: '')
+    .#{$device}width-auto
+        width: auto
+    @for $i from 0 through 100
+        .#{$device}width-#{$i}
+            width: percentage($i / 100)
+
+@include width
+@each $device in $device-list
+    @media #{nth($device,2)}
+        @include width(nth($device,1) + "-")

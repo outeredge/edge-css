@@ -1,0 +1,28 @@
+$border-radius: false !default
+$border-radius-size: 5px !default
+
+@mixin border-radius($size)
+    -webkit-border-radius: #{$size}
+    -moz-border-radius: #{$size}
+    -ms-border-radius: #{$size}
+    -o-border-radius: #{$size}
+    border-radius: #{$size}
+
+@if $border-radius == true
+    .input,
+    .textarea,
+    .select,
+    .button,
+    .border
+        @include border-radius($border-radius-size)
+
+.border-radius
+    @include border-radius($border-radius-size)
+.border-radius-top
+    @include border-radius($border-radius-size $border-radius-size 0 0)
+.border-radius-bottom
+    @include border-radius(0 0 $border-radius-size $border-radius-size)
+.border-radius-left
+    @include border-radius($border-radius-size 0 0 $border-radius-size)
+.border-radius-right
+    @include border-radius(0 $border-radius-size $border-radius-size 0)

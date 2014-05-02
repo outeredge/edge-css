@@ -1,0 +1,26 @@
+@mixin font-style($device: '')
+    .#{$device}uppercase
+        text-transform: uppercase
+    .#{$device}lowercase
+        text-transform: lowercase
+    .#{$device}capitalize
+        text-transform: capitalize
+    .#{$device}italic
+        font-style: italic
+    .#{$device}ltr
+        direction: ltr
+    .#{$device}rtl
+        direction: rtl
+    .#{$device}underline
+        text-decoration: underline
+    .#{$device}overline
+        text-decoration: overline
+    .#{$device}line-through
+        text-decoration: line-through
+    .#{$device}text-overflow-ellipsis
+        text-overflow: ellipsis
+
+@include font-style
+@each $device in $device-list
+    @media #{nth($device,2)}
+        @include font-style(nth($device,1) + "-")

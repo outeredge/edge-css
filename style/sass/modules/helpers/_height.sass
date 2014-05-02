@@ -1,0 +1,9 @@
+@mixin height($device: '')
+    @for $i from 0 through 100
+        .#{$device}height-#{$i}
+            height: percentage($i / 100)
+
+@include height
+@each $device in $device-list
+    @media #{nth($device,2)}
+        @include height(nth($device,1) + "-")

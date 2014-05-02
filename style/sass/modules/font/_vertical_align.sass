@@ -1,0 +1,12 @@
+@mixin vertical-align($device: '')
+    .#{$device}valign-middle
+        vertical-align: middle
+    .#{$device}valign-bottom
+        vertical-align: bottom
+    .#{$device}valign-top
+        vertical-align: top
+
+@include vertical-align
+@each $device in $device-list
+    @media #{nth($device,2)}
+        @include vertical-align(nth($device,1) + "-")

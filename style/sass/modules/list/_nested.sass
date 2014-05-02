@@ -1,0 +1,20 @@
+$nested-decimal-list-depth: 5 !default
+$nested-decimal-list-el: li
+
+.nested-decimal-list
+    counter-reset: list
+    ol
+        counter-reset: list
+    li
+        position: relative
+        &:before
+            font-weight: bold
+            position: absolute
+            top: 0
+            left: 0
+            counter-increment: list
+            content: counters(list, ".") " "
+    @for $i from 1 through $nested-decimal-list-depth
+        #{$nested-decimal-list-el}
+            padding-left: #{$i+0.5}em
+        $nested-decimal-list-el: append($nested-decimal-list-el, li)

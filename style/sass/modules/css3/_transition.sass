@@ -1,0 +1,17 @@
+$transitions: true !default
+$transition-duration: .5s !default
+
+@mixin transition($duration)
+    -webkit-transition: #{$duration}
+    -moz-transition: #{$duration}
+    -ms-transition: #{$duration}
+    -o-transition: #{$duration}
+    transition: #{$duration}
+
+.transition
+    @include transition($transition-duration)
+
+@if $transitions == true
+    a,
+    .link
+        @include transition($transition-duration)

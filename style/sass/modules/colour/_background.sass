@@ -1,0 +1,13 @@
+@mixin background($colour-name, $colour-hex, $device: '')
+    .#{$device}bg-#{$colour-name}
+        background-color: #{$colour-hex}
+    .#{$device}hover-bg-#{$colour-name}:hover
+        background-color: #{$colour-hex}
+
+@each $colour in $colours
+    @include background(nth($colour,1), nth($colour,2))
+
+@each $device in $device-list
+    @media #{nth($device,2)}
+        @each $colour in $colours
+            @include background(nth($colour,1), nth($colour,2), nth($device,1) + "-")

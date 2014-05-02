@@ -1,0 +1,9 @@
+code {
+    font-family: monospace;
+    border: 1px solid #CCC;
+    background: #F6F6F6;
+    padding: 1em;
+    display: block;
+    white-space: pre;
+    margin-bottom: 1em;
+}

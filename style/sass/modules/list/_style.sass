@@ -1,0 +1,10 @@
+@mixin list-style($device: '')
+    .#{$device}list
+        list-style: disc
+    .#{$device}no-list
+        list-style: none
+
+@include list-style
+@each $device in $device-list
+    @media #{nth($device,2)}
+        @include list-style(nth($device,1) + "-")
