@@ -1,0 +1,18 @@
+{
+    "name": "outeredge/edge-css",
+    "description": "outer/edge CSS Framework",
+    "type": "library",
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:outeredge/edge-css.git"
+        }
+    ],
+    "authors": [
+        {
+            "name": "outer/edge",
+            "email": "support@outeredgeuk.com"
+        }
+    ]
+}
