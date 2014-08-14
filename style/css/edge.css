@@ -212,6 +212,15 @@ a,
   transform: rotate(360deg);
 }
 
+/* line 1, ../sass/modules/css3/_helpers.sass */
+.no-user-select {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 /* line 18, ../sass/modules/font/_typography.sass */
 .h1 {
   font-size: 2em;
