@@ -5,8 +5,10 @@
         display: block
     .#{$device}inline-block
         display: inline-block
+        float: none
     .#{$device}inline
         display: inline
+        float: none
 
 @include display
 @each $device in $device-list
