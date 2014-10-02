@@ -1,7 +1,9 @@
 @mixin background($colour-name, $colour-hex, $device: '')
-    .#{$device}bg-#{$colour-name}
+    .#{$device}bg-#{$colour-name},
+    %#{$device}bg-#{$colour-name}
         background-color: #{$colour-hex}
-    .#{$device}hover-bg-#{$colour-name}:hover
+    .#{$device}hover-bg-#{$colour-name}:hover,
+    %#{$device}hover-bg-#{$colour-name}:hover
         background-color: #{$colour-hex}
 
 @each $colour in $colours

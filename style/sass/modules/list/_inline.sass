@@ -1,7 +1,8 @@
 $inline-list-margin: .5em !default
 
 @mixin inline-list($device: '')
-    .#{$device}inline-list
+    .#{$device}inline-list,
+    %#{$device}inline-list
         > *
             display: inline-block
             margin-right: $inline-list-margin

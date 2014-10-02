@@ -1,5 +1,6 @@
 @mixin sizing($device: '')
-    .#{$device}border-box
+    .#{$device}border-box,
+    %#{$device}border-box
         @include box-sizing(border-box)
 
 @include sizing

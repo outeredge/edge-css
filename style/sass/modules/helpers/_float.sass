@@ -1,9 +1,12 @@
 @mixin float($device: '')
-    .#{$device}left
+    .#{$device}left,
+    %#{$device}left
         float: left
-    .#{$device}right
+    .#{$device}right,
+    %#{$device}right
         float: right
-    .#{$device}no-float
+    .#{$device}no-float,
+    %#{$device}no-float
         float: none
 
 @include float

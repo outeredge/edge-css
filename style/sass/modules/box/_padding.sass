@@ -5,51 +5,70 @@ $padding-large: large 1.5em !default
 $padding-sizes: $padding-small $padding-large !default
 
 @mixin padding($device: '')
-    .#{$device}#{$padding-class}
+    .#{$device}#{$padding-class},
+    %#{$device}#{$padding-class}
         padding: #{$padding-default}
-    .#{$device}#{$padding-class}-#{$class-left}
+    .#{$device}#{$padding-class}-#{$class-left},
+    %#{$device}#{$padding-class}-#{$class-left}
         padding-left: #{$padding-default}
-    .#{$device}#{$padding-class}-#{$class-right}
+    .#{$device}#{$padding-class}-#{$class-right},
+    %#{$device}#{$padding-class}-#{$class-right}
         padding-right: #{$padding-default}
-    .#{$device}#{$padding-class}-#{$class-top}
+    .#{$device}#{$padding-class}-#{$class-top},
+    %#{$device}#{$padding-class}-#{$class-top}
         padding-top: #{$padding-default}
-    .#{$device}#{$padding-class}-#{$class-bottom}
+    .#{$device}#{$padding-class}-#{$class-bottom},
+    %#{$device}#{$padding-class}-#{$class-bottom}
         padding-bottom: #{$padding-default}
-    .#{$device}#{$padding-class}-vertical
+    .#{$device}#{$padding-class}-vertical,
+    %#{$device}#{$padding-class}-vertical
         padding-top: #{$padding-default}
         padding-bottom: #{$padding-default}
-    .#{$device}#{$padding-class}-horizontal
+    .#{$device}#{$padding-class}-horizontal,
+    %#{$device}#{$padding-class}-horizontal
         padding-left: #{$padding-default}
         padding-right: #{$padding-default}
 
 @mixin padding-variant($size, $device: '')
-    .#{$device}#{$padding-class}-#{nth($size,1)}
+    .#{$device}#{$padding-class}-#{nth($size,1)},
+    %#{$device}#{$padding-class}-#{nth($size,1)}
         padding: #{nth($size,2)}
-    .#{$device}#{$padding-class}-#{$class-left}-#{nth($size,1)}
+    .#{$device}#{$padding-class}-#{$class-left}-#{nth($size,1)},
+    %#{$device}#{$padding-class}-#{$class-left}-#{nth($size,1)}
         padding-left: #{nth($size,2)}
-    .#{$device}#{$padding-class}-#{$class-right}-#{nth($size,1)}
+    .#{$device}#{$padding-class}-#{$class-right}-#{nth($size,1)},
+    %#{$device}#{$padding-class}-#{$class-right}-#{nth($size,1)}
         padding-right: #{nth($size,2)}
-    .#{$device}#{$padding-class}-#{$class-top}-#{nth($size,1)}
+    .#{$device}#{$padding-class}-#{$class-top}-#{nth($size,1)},
+    %#{$device}#{$padding-class}-#{$class-top}-#{nth($size,1)}
         padding-top: #{nth($size,2)}
-    .#{$device}#{$padding-class}-#{$class-bottom}-#{nth($size,1)}
+    .#{$device}#{$padding-class}-#{$class-bottom}-#{nth($size,1)},
+    %#{$device}#{$padding-class}-#{$class-bottom}-#{nth($size,1)}
         padding-bottom: #{nth($size,2)}
-    .#{$device}#{$padding-class}-vertical-#{nth($size,1)}
+    .#{$device}#{$padding-class}-vertical-#{nth($size,1)},
+    %#{$device}#{$padding-class}-vertical-#{nth($size,1)}
         padding-top: #{nth($size,2)}
         padding-bottom: #{nth($size,2)}
-    .#{$device}#{$padding-class}-horizontal-#{nth($size,1)}
+    .#{$device}#{$padding-class}-horizontal-#{nth($size,1)},
+    %#{$device}#{$padding-class}-horizontal-#{nth($size,1)}
         padding-left: #{nth($size,2)}
         padding-right: #{nth($size,2)}
 
 @mixin no-padding($device: '')
-    .#{$device}no-#{$padding-class}
+    .#{$device}no-#{$padding-class},
+    %#{$device}no-#{$padding-class}
         padding: 0
-    .#{$device}no-#{$padding-class}-#{$class-left}
+    .#{$device}no-#{$padding-class}-#{$class-left},
+    %#{$device}no-#{$padding-class}-#{$class-left}
         padding-left: 0
-    .#{$device}no-#{$padding-class}-#{$class-right}
+    .#{$device}no-#{$padding-class}-#{$class-right},
+    %#{$device}no-#{$padding-class}-#{$class-right}
         padding-right: 0
-    .#{$device}no-#{$padding-class}-#{$class-top}
+    .#{$device}no-#{$padding-class}-#{$class-top},
+    %#{$device}no-#{$padding-class}-#{$class-top}
         padding-top: 0
-    .#{$device}no-#{$padding-class}-#{$class-bottom}
+    .#{$device}no-#{$padding-class}-#{$class-bottom},
+    %#{$device}no-#{$padding-class}-#{$class-bottom}
         padding-bottom: 0
 
 @include padding

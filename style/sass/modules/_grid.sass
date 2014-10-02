@@ -3,13 +3,16 @@ $grid-columns: 12 !default
 $grid-centered: true !default
 
 @mixin column($device, $grid-columns, $columns)
-    .#{$device}-#{$columns}
+    .#{$device}-#{$columns},
+    %#{$device}-#{$columns}
         float: left
         width: percentage($columns / $grid-columns)
         @include box-sizing(border-box)
-    .#{$device}-prepend-#{$columns}
+    .#{$device}-prepend-#{$columns},
+    %#{$device}-prepend-#{$columns}
         margin-left: percentage($columns / $grid-columns)
-    .#{$device}-append-#{$columns}
+    .#{$device}-append-#{$columns},
+    %#{$device}-append-#{$columns}
         margin-right: percentage($columns / $grid-columns)
 
 @mixin clearfix
@@ -22,13 +25,9 @@ $grid-centered: true !default
     &
         *zoom: 1
 
-@mixin clear($device: '')
-    .#{$device}clear
-        clear: both
-    .#{$device}clear-left
-        clear: left
-    .#{$device}clear-right
-        clear: right
+.clearfix,
+%clearfix
+    @include clearfix
 
 .row
     width: 100%
@@ -38,14 +37,21 @@ $grid-centered: true !default
     @if $grid-centered == true
         margin: 0 auto
 
-
 @each $device in $device-list
     @media #{nth($device,2)}
         @for $i from 1 through $grid-columns
             @include column(nth($device,1), $grid-columns, $i)
 
-.clearfix
-    @include clearfix
+@mixin clear($device: '')
+    .#{$device}clear,
+    %#{$device}clear
+        clear: both
+    .#{$device}clear-left,
+    %#{$device}clear-left
+        clear: left
+    .#{$device}clear-right,
+    %#{$device}clear-right
+        clear: right
 
 @include clear
 @each $device in $device-list

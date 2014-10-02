@@ -8,5 +8,6 @@
 
 $rotations: 45 90 135 180 225 270 315 360
 @each $rotation in $rotations
-    .rotate-#{$rotation}
+    .rotate-#{$rotation},
+    %rotate-#{$rotation}
         @include transform(rotate(#{$rotation}deg))

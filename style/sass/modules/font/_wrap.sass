@@ -1,7 +1,9 @@
 @mixin white-space($device: '')
-    .#{$device}wrap
+    .#{$device}wrap,
+    %#{$device}wrap
         white-space: normal
-    .#{$device}no-wrap
+    .#{$device}no-wrap,
+    %#{$device}no-wrap
         white-space: nowrap
 
 @include white-space

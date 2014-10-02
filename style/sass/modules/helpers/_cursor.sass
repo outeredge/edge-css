@@ -1,7 +1,9 @@
 @mixin cursor($device: '')
-    .#{$device}cursor-pointer
+    .#{$device}cursor-pointer,
+    %#{$device}cursor-pointer
         cursor: pointer
-    .#{$device}cursor-default
+    .#{$device}cursor-default,
+    %#{$device}cursor-default
         cursor: default
 
 @include cursor

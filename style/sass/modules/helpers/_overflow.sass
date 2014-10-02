@@ -1,15 +1,21 @@
 @mixin overflow($device: '')
-    .#{$device}scroll
+    .#{$device}scroll,
+    %#{$device}scroll
         overflow: visible
-    .#{$device}no-scroll
+    .#{$device}no-scroll,
+    %#{$device}no-scroll
         overflow: hidden
-    .#{$device}scroll-x
+    .#{$device}scroll-x,
+    %#{$device}scroll-x
         overflow-x: visible
-    .#{$device}no-scroll-x
+    .#{$device}no-scroll-x,
+    %#{$device}no-scroll-x
         overflow-x: hidden
-    .#{$device}scroll-y
+    .#{$device}scroll-y,
+    %#{$device}scroll-y
         overflow-y: visible
-    .#{$device}no-scroll-y
+    .#{$device}no-scroll-y,
+    %#{$device}no-scroll-y
         overflow-y: hidden
 
 @include overflow

@@ -10,19 +10,29 @@ $border-radius-size: 5px !default
 
 @if $border-radius == true
     .input,
+    %input,
     .textarea,
+    %textarea,
     .select,
+    %select,
     .button,
+    %button,
     .border
+    %border
         @include border-radius($border-radius-size)
 
-.border-radius
+.border-radius,
+%border-radius
     @include border-radius($border-radius-size)
-.border-radius-top
+.border-radius-top,
+%border-radius-top
     @include border-radius($border-radius-size $border-radius-size 0 0)
-.border-radius-bottom
+.border-radius-bottom,
+%border-radius-bottom
     @include border-radius(0 0 $border-radius-size $border-radius-size)
-.border-radius-left
+.border-radius-left,
+%border-radius-left
     @include border-radius($border-radius-size 0 0 $border-radius-size)
-.border-radius-right
+.border-radius-right,
+%border-radius-right
     @include border-radius(0 $border-radius-size $border-radius-size 0)

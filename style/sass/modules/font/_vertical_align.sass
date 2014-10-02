@@ -1,9 +1,12 @@
 @mixin vertical-align($device: '')
-    .#{$device}valign-middle
+    .#{$device}valign-middle,
+    %#{$device}valign-middle
         vertical-align: middle
-    .#{$device}valign-bottom
+    .#{$device}valign-bottom,
+    %#{$device}valign-bottom
         vertical-align: bottom
-    .#{$device}valign-top
+    .#{$device}valign-top,
+    %#{$device}valign-top
         vertical-align: top
 
 @include vertical-align

@@ -1,8 +1,10 @@
 @mixin width($device: '')
-    .#{$device}width-auto
+    .#{$device}width-auto,
+    %#{$device}width-auto
         width: auto
     @for $i from 0 through 100
-        .#{$device}width-#{$i}
+        .#{$device}width-#{$i},
+        %#{$device}width-#{$i}
             width: percentage($i / 100)
 
 @include width

@@ -1,6 +1,7 @@
 @mixin height($device: '')
     @for $i from 0 through 100
-        .#{$device}height-#{$i}
+        .#{$device}height-#{$i},
+        %#{$device}height-#{$i}
             height: percentage($i / 100)
 
 @include height

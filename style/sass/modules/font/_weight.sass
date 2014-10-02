@@ -1,7 +1,9 @@
 @mixin font-style($device: '')
-    .#{$device}bold
+    .#{$device}bold,
+    %#{$device}bold
         font-weight: bold
-    .#{$device}not-bold
+    .#{$device}not-bold,
+    %#{$device}not-bold
         font-weight: normal
 
 @include font-style

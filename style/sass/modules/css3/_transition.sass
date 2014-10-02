@@ -8,10 +8,13 @@ $transition-duration: .5s !default
     -o-transition: #{$duration}
     transition: #{$duration}
 
-.transition
+.transition,
+%transition
     @include transition($transition-duration)
 
 @if $transitions == true
     a,
-    .link
+    %a,
+    .link,
+    %link
         @include transition($transition-duration)

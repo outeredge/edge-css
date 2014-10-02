@@ -1,7 +1,9 @@
 @mixin list-style($device: '')
-    .#{$device}list
+    .#{$device}list,
+    %#{$device}list
         list-style: disc
-    .#{$device}no-list
+    .#{$device}no-list,
+    %#{$device}no-list
         list-style: none
 
 @include list-style

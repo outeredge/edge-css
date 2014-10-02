@@ -5,30 +5,45 @@ $border-style: solid !default
 
 @mixin border($border-width, $border-style, $border-color, $device: '')
     .#{$device}#{$border-class},
+    %#{$device}#{$border-class},
     .#{$device}#{$border-class}-left,
+    %#{$device}#{$border-class}-left,
     .#{$device}#{$border-class}-right,
+    %#{$device}#{$border-class}-right,
     .#{$device}#{$border-class}-top,
-    .#{$device}#{$border-class}-bottom
+    %#{$device}#{$border-class}-top,
+    .#{$device}#{$border-class}-bottom,
+    %#{$device}#{$border-class}-bottom
         @include box-sizing(border-box)
-    .#{$device}#{$border-class}
+    .#{$device}#{$border-class},
+    %#{$device}#{$border-class}
         border: $border-width $border-style $border-color
-    .#{$device}#{$border-class}-#{$class-left}
+    .#{$device}#{$border-class}-#{$class-left},
+    %#{$device}#{$border-class}-#{$class-left}
         border-left: $border-width $border-style $border-color
-    .#{$device}#{$border-class}-#{$class-right}
+    .#{$device}#{$border-class}-#{$class-right},
+    %#{$device}#{$border-class}-#{$class-right}
         border-right: $border-width $border-style $border-color
-    .#{$device}#{$border-class}-#{$class-top}
+    .#{$device}#{$border-class}-#{$class-top},
+    %#{$device}#{$border-class}-#{$class-top}
         border-top: $border-width $border-style $border-color
-    .#{$device}#{$border-class}-#{$class-bottom}
+    .#{$device}#{$border-class}-#{$class-bottom},
+    %#{$device}#{$border-class}-#{$class-bottom}
         border-bottom: $border-width $border-style $border-color
-    .#{$device}no-#{$border-class}
+    .#{$device}no-#{$border-class},
+    %#{$device}no-#{$border-class}
         border: none
-    .#{$device}no-#{$border-class}-#{$class-left}
+    .#{$device}no-#{$border-class}-#{$class-left},
+    %#{$device}no-#{$border-class}-#{$class-left}
         border-left: none
-    .#{$device}no-#{$border-class}-#{$class-right}
+    .#{$device}no-#{$border-class}-#{$class-right},
+    %#{$device}no-#{$border-class}-#{$class-right}
         border-right: none
-    .#{$device}no-#{$border-class}-#{$class-top}
+    .#{$device}no-#{$border-class}-#{$class-top},
+    %#{$device}no-#{$border-class}-#{$class-top}
         border-top: none
-    .#{$device}no-#{$border-class}-#{$class-bottom}
+    .#{$device}no-#{$border-class}-#{$class-bottom},
+    %#{$device}no-#{$border-class}-#{$class-bottom}
         border-bottom: none
 
 @include border($border-width, $border-style, $border-color)

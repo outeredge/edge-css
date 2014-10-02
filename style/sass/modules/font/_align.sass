@@ -1,11 +1,15 @@
 @mixin text-align($device: '')
-    .#{$device}text-left
+    .#{$device}text-left,
+    %#{$device}text-left
         text-align: left
-    .#{$device}text-right
+    .#{$device}text-right,
+    %#{$device}text-right
         text-align: right
-    .#{$device}text-center
+    .#{$device}text-center,
+    %#{$device}text-center
         text-align: center
-    .#{$device}text-justify
+    .#{$device}text-justify,
+    %#{$device}text-justify
         text-align: justify
 
 @include text-align

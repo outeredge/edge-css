@@ -1,9 +1,12 @@
 @mixin visibility($device: '')
-    .#{$device}invisible
+    .#{$device}invisible,
+    %#{$device}invisible
         visibility: hidden
-    .#{$device}visible
+    .#{$device}visible,
+    %#{$device}visible
         visibility: visible
-    .#{$device}collapse
+    .#{$device}collapse,
+    %#{$device}collapse
         visibility: collapse
 
 @include visibility

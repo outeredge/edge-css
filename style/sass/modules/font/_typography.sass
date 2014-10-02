@@ -15,7 +15,8 @@ $link-underline: false !default
 $link-hover-color: #009900 !default
 
 @mixin font-style($class-name, $font-size, $line-height: '', $font-weight: '', $font-family: '')
-    .#{$class-name}
+    .#{$class-name},
+    %#{$class-name}
         font-size: $font-size
         @if $line-height != ''
             line-height: $line-height
@@ -34,7 +35,8 @@ $link-hover-color: #009900 !default
 
 
 @mixin paragraph($device: '')
-    .#{$device}paragraph
+    .#{$device}paragraph,
+    %#{$device}paragraph
         font-size: $paragraph-font-size
         line-height: $paragraph-line-height
         margin-bottom: $paragraph-margin
@@ -44,13 +46,16 @@ $link-hover-color: #009900 !default
     @media #{nth($device,2)}
         @include paragraph(nth($device,1) + "-")
 
-p
+p,
+%p
     font-size: $paragraph-font-size
     line-height: $paragraph-line-height
     margin-bottom: $paragraph-margin
 
 a,
-.link
+%a,
+.link,
+%link
     color: $link-color
     cursor: pointer
     @if $link-underline == false
