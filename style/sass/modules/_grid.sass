@@ -38,6 +38,9 @@ $grid-centered: true !default
     @if $grid-centered == true
         margin: 0 auto
 
+@for $i from 1 through $grid-columns
+    @include column('column', $grid-columns, $i)
+
 @each $device in $device-list
     @media #{nth($device,2)}
         @for $i from 1 through $grid-columns
