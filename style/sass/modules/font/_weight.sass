@@ -1,7 +1,9 @@
+$bold: bold !default
+
 @mixin font-style($device: '')
     .#{$device}bold,
     %#{$device}bold
-        font-weight: bold
+        font-weight: $bold
     .#{$device}not-bold,
     %#{$device}not-bold
         font-weight: normal
