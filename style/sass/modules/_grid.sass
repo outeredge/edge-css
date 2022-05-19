@@ -7,7 +7,7 @@ $grid-centered: true !default
     %#{$device}-#{$columns}
         float: left
         width: percentage($columns / $grid-columns)
-        @include box-sizing(border-box)
+        box-sizing: border-box
     .#{$device}-prepend-#{$columns},
     %#{$device}-prepend-#{$columns}
         margin-left: percentage($columns / $grid-columns)
@@ -33,7 +33,7 @@ $grid-centered: true !default
 %row
     width: 100%
     max-width: $grid-width
-    @include box-sizing(border-box)
+    box-sizing: border-box
     @include clearfix
     @if $grid-centered == true
         margin: 0 auto

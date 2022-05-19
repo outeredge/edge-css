@@ -14,7 +14,7 @@ $border-style: solid !default
     %#{$device}#{$border-class}-top,
     .#{$device}#{$border-class}-bottom,
     %#{$device}#{$border-class}-bottom
-        @include box-sizing(border-box)
+        box-sizing: border-box
     .#{$device}#{$border-class},
     %#{$device}#{$border-class}
         border: $border-width $border-style $border-color
